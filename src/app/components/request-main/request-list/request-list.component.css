@@ -1,0 +1,60 @@
+table {
+  width: 100%;
+}
+
+.table tbody tr td table tr:hover {
+  background-color: transparent !important;
+}
+
+.table th,
+.table td {
+  vertical-align: middle !important;
+  text-align: center;
+}
+
+.table thead th {
+  min-width: 100px;
+}
+
+/* .mat-form-field {
+      width: 100%;
+    } */
+
+.filter-row {
+  display: inline-block !important;
+  margin-right: 8px;
+}
+
+.table-sm td,
+.table-sm th {
+  padding: .15rem .05rem !important;
+  font-size: 88% !important;
+}
+
+.search-ico {
+  position: relative;
+  bottom: -3px;
+  right: 3px;
+}
+
+.table-bordered td,
+.table-bordered th {
+  border: 1px solid #aaa;
+}
+
+.table-borderless tbody+tbody,
+.table-borderless td,
+.table-borderless th,
+.table-borderless thead th {
+  border: 0 !important;
+}
+
+.text-desing td {
+  font-weight: 700;
+}
+
+.button-desing {
+  float: right;
+  display: flex;
+  justify-content: flex-end;
+}

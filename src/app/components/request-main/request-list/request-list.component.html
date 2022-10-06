@@ -1,0 +1,122 @@
+<mat-card>
+    <div class="row mx-2">
+        <div class="col" align="start">
+            <h1 class="m-0"><strong>TALEP BİLDİRİM LİSTESİ</strong></h1>
+        </div>
+        <div class="col m-0" align="end">
+            <button mat-button class="mat-btn mt-add-btn" routerLink="/request-main/request-add">
+                <i class="fa fa-plus-square mr-1"></i> Yeni Talep Oluştur
+            </button>
+        </div>
+    </div>
+    <hr style="border-color: #bbb;border: 1px solid;" class="m-0 mt-2">
+
+    <p-table #dt1 [value]="requestList" dataKey="id" [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]"
+        [loading]="loading" styleClass="p-datatable-gridlines" [paginator]="true" class="table-hover table-bordered"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+        [globalFilterFields]="['title','senderUserName','category','requestUsers.receiverUser','priority','createDate']">
+
+        <ng-template pTemplate="caption">
+            <!-- SEARCH -->
+            <div class="d-flex col-9 justify-content-between">
+                <mat-form-field style="width: 50% !important;">
+                    <mat-label>Tüm listede arama yap</mat-label>
+                    <mat-icon matPrefix class="search-ico">search</mat-icon>
+                    <input matInput type="text" (input)="dt1.filterGlobal($event.target.value, 'contains')" autocomplete="off">
+                </mat-form-field>
+            </div>
+            <mat-label style="color:red;"><h4>Arıza içeriğini görüntülemek için çift tıklayın!!</h4></mat-label>
+        </ng-template>
+
+        <!-- NG_TEMPLATE HEADER -->
+        <ng-template pTemplate="header">
+            <tr>
+                <th>
+                    <div class="flex justify-content-center aling-items-center">
+                        
+                    </div>
+                </th>
+                <th>
+                    <div class="flex justify-content-center aling-items-center">
+                        Arıza Başlığı
+                        <p-columnFilter type="text" field="title" display="menu"></p-columnFilter>
+                    </div>
+                </th>
+                <!-- <th>
+                    <div class="flex justify-content-center aling-items-center">
+                        Arıza İçeriği
+                        <p-columnFilter type="text" field="content" display="menu"></p-columnFilter>
+                    </div>
+                </th> -->
+                <th>
+                    <div class="flex justify-content-center aling-items-center">
+                        Talep Gönderen Kullanıcı
+                        <p-columnFilter type="text" field="senderUserName" display="menu"></p-columnFilter>
+                    </div>
+                </th>
+                <th>
+                    <div class="flex justify-content-center aling-items-center">
+                        Kategori
+                        <p-columnFilter type="text" field="category" display="menu"></p-columnFilter>
+                    </div>
+                </th>
+                <th>
+                    <div class="flex justify-content-center aling-items-center">
+                        Alıcı Kullanıcılar
+                        <p-columnFilter type="text" field="requestUsers.receiverUser" display="menu"></p-columnFilter>
+                    </div>
+                </th>
+                <th>
+                    <div class="flex justify-content-category aling-items-center">
+                        Öncelik
+                        <p-columnFilter type="text" field="priority" display="menu"></p-columnFilter>
+                    </div>
+                </th>
+                <th>
+                    <div class="flex justify-content-category aling-items-center">
+                        Gönderim Tarihi
+                        <p-columnFilter type="date" field="createDate" display="menu"></p-columnFilter>
+                    </div>
+                </th>
+                <!-- <th>
+                    <div class="flex justify-content-category aling-items-center">
+                        İşlem Durumu
+                        <p-columnFilter type="text" field="requestUsers.isApproved" display="menu"></p-columnFilter>
+                    </div>
+                </th> -->
+            </tr>
+        </ng-template>
+
+        <!-- NG_TEMPLATE BODY -->
+        <ng-template pTemplate="body" let-request>
+            <tr class="text-desing" (dblclick)="detailList(request.id)">
+                <td style="width: 90px;">
+                    <button mat-button class="btn btn-outline-success" (click)="detailList(request.id)">
+                        <i class="fa fa-sort-down sort-down-ico">İçeriği Görüntüle</i>
+                    </button>
+                </td>
+                <td>{{ request.title }}</td>
+                <!-- <td>{{ request.content }}</td> -->
+                <td>{{ request.senderUserName }}</td>
+                <td>{{ request.category }}</td>
+                <td>
+                    <ng-container *ngFor="let item of request.requestUsers;let i = index">{{ item.receiverUser.firstName }}
+                        {{item.receiverUser.lastName}}<ng-container *ngIf="i<request.requestUsers.length-1">, </ng-container>
+                    </ng-container>
+                </td>
+                <td>{{ request.priority }}</td>
+                <td>{{ request.createDate | date: 'dd.MM.yyyy' }}</td>
+                <!-- <td>
+                    {{}} FONKSİYON YAZILACAK
+                </td> -->
+            </tr>
+        </ng-template>
+
+        <!-- DO YOU HAVE DATA -->
+        <ng-template pTemplate="emptymessage">
+            <tr>
+                <td colspan="7">No customers found.</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</mat-card>

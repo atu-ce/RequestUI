@@ -1,0 +1,37 @@
+<h2 mat-dialog-title><strong>Talep İçerik Detay Sayfası</strong></h2>
+<hr>
+<mat-dialog-content>
+    <mat-card>
+        <div class="row">
+            <div class="col-12">
+                    <tr>
+                        <td><b>Talep Başlığı :</b></td>
+                        <td mat-dialog-content>{{ request.title }}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Talepen Kullanıcı :</b></td>
+                        <td><strong style="font-weight: 400; font-size: 18px;">{{ requestUser.receiverUser }}</strong></td>
+                    </tr>
+            </div>
+        </div>
+        <table class="table table-hover table-bordered">
+
+            <thead class="table-warning">
+                <tr>
+                    <th>Talep İçeriği</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let request of request">
+                    <td>{{ request.content }}</td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <mat-dialog-actions align="end">
+            <button mat-raised-button class="mx-1 btn btn-outline-danger" (click)="closeDialog()">Close</button>
+        </mat-dialog-actions>
+    </mat-card>
+</mat-dialog-content>

@@ -1,0 +1,43 @@
+<mat-toolbar color="primary" class="toolbardesing">
+    <button mat-raised-button color="primary" type="button" style="font-size: 18px; margin-right: 10px;"
+        [routerLink]="['/request-main/request-list']">
+        <mat-icon style="color: #ffffff;">home</mat-icon>
+        <strong style="margin-right: 20px; font-weight: 400; margin-left: 10px;">AnaSayfa</strong>
+    </button>
+
+    <button mat-raised-button color="primary" type="button" style="font-size: 18px;" [routerLink]="['/request-main/request-add']">
+        <mat-icon style="color: #ffffff;">edit_document</mat-icon>
+        <strong style=" font-weight: 400; margin-left: 10px;">Talep Oluştur</strong>
+    </button>
+
+    <span class="example-spacer"></span>
+
+    <button mat-raised-button color="primary" class="example-icon" type="button" aria-label="Example icon-button with menu icon"
+        [matMenuTriggerFor]="User">
+        <strong style="font-weight: 400; font-size: 18px;"> {{ user.firstName }} {{ user.lastName }} </strong>
+        <mat-icon style="color:#ffffff; margin-left: 5px;">expand_more</mat-icon>
+    </button>
+
+</mat-toolbar>
+
+<mat-menu #User="matMenu">
+    <button mat-menu-item type="button" [routerLink]="['/admin-panel']"
+        style="width: 100%; display: flex; align-items: center; margin-bottom: 5px;">
+        <mat-icon style="color: grey;">admin_panel_settings</mat-icon>
+        <strong>Admin Panel</strong>
+    </button>
+    <button mat-menu-item type="button" [routerLink]="['/password-update']"
+        style="width: 100%; display: flex; align-items: center; margin-bottom: 5px;">
+        <mat-icon style="color: orange;">edit</mat-icon>
+        <strong>Parola Güncelle</strong>
+    </button>
+    <button mat-menu-item type="button" (click)="logout()" style="width: 100%; display: flex; align-items: center; margin-bottom: 5px;">
+        <mat-icon style="color: red;">logout</mat-icon>
+        <strong>Çıkış Yap</strong>
+    </button>
+</mat-menu>
+<br>
+<br>
+<br>
+
+<router-outlet></router-outlet>

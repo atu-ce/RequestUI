@@ -1,0 +1,69 @@
+<div class="container-fluid" style="width: 1000px;">
+    <div class="row my-2">
+        <div class="col">
+            <mat-card>
+                <div align="start">
+                    <h1 class="m-0"><strong>Talep Oluştur</strong></h1>
+                </div>
+                <hr style="border-color: #bbb;" class="m-0 my-2">
+                <!-- FORM -->
+                <form [formGroup]="requestForm" autocomplete="off" (ngSubmit)="submit()">
+                    <div class="list-group list-group-flush">
+
+                        <div class="list-group-item">
+                            <label for="title"><strong class="badge badge-danger">1</strong>  Talep Başlığı :  </label>
+                            <mat-form-field appearance="outline">
+                                <input matInput #title formControlName="title" type="text" name="title">
+                                <mat-error *ngIf="this.requestForm.controls['title'].invalid">
+                                    <h5><strong> Talep Başlık Alanı Boş Olamaz. </strong></h5>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="list-group-item m-auto" style="height: 380px;">
+                            <label for="content"><strong class="badge badge-danger">2</strong>  Talep İçeriği : </label>
+                            <ckeditor [editor]="Editor" formControlName="content"
+                                [config]="{ toolbar: ['heading', '|', 'bold', 'italic', '|', 'bulletedList', 'numberedList', '|', 'insertTable', '|', 'undo', 'redo']}">
+                            </ckeditor>
+                        </div>
+
+                        <div class="list-group-item">
+                            <label for="category"><strong class="badge badge-danger">3</strong>  Kategori :  </label>
+                            <mat-form-field appearance="outline">
+                                <mat-select formControlName="category" name="category">
+                                    <mat-option value="1">Yazılım</mat-option>
+                                    <mat-option value="2">Donanım</mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="this.requestForm.controls['category'].invalid">
+                                    <h5><strong> Lütfen Kategori Seçiniz. </strong></h5>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="list-group-item">
+                            <label for="priority"><strong class="badge badge-danger">4</strong>  Öncelik :  </label>
+                            <mat-form-field appearance="outline">
+                                <mat-select formControlName="priority" name="priority">
+                                    <mat-option value="1">Yüksek</mat-option>
+                                    <mat-option value="2">Normal</mat-option>
+                                    <mat-option value="3">Düşük</mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="this.requestForm.controls['priority'].invalid">
+                                    <h5><strong> Lütfen öncelik Belirleyiniz. </strong></h5>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="list-group-item" align="end">
+                            <button mat-button [disabled]="requestForm.invalid" class="mt-btn mt-add-btn" type="submit">
+                                <mat-icon mat-icon style="margin-right: 5px;">add_box</mat-icon>
+                                {{ 'Talep Et' }}
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+                <!-- /FORM -->
+            </mat-card>
+        </div>
+    </div>
+</div>

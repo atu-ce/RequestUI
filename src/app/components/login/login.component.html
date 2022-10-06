@@ -1,0 +1,79 @@
+<div class="bg-login" style="width: 100%;" [ngStyle]="{'background-image': 'url(' + LoginBacgroundImage + ')'}"></div>
+
+<form [formGroup]="formLogin" (ngSubmit)="submit()" autocomplete="off">
+
+    <!-- FIELDSET -->
+    <fieldset class="login-fieldset">
+        <!-- LEGENT -->
+        <legend>Kullanıcı Giriş Formu:</legend>
+
+        <hr>
+
+        <!-- USER LOGIN -->
+        <mat-card>
+            <div class="row">
+                <div class="col-12">
+
+                    <!-- USER NAME -->
+                    <p>
+                        <mat-form-field class="example" appearance="outline">
+                            <mat-label>Kullanıcı Adı</mat-label>
+                            <mat-icon matPrefix class="form-ico">person</mat-icon>
+                            <input formControlName="userName" matInput type="text" placeholder="" value="" name="userName">
+
+                            <mat-hint *ngIf="!formLogin.controls['userName'].value">
+                                <span></span>
+                            </mat-hint>
+
+                            <!-- MAT_ERROR -->
+                            <mat-hint *ngIf="!formLogin.controls['userName'].value">
+                                <span>
+                                    <strong class="mr-1" style="color:red;font-size: 15px;">*</strong>
+                                    Kullanıcı adınızı giriniz
+                                </span>
+                            </mat-hint>
+                            <mat-error *ngIf="formLogin.controls['userName'].invalid">Kullanıcı adı Boş geçilemez!</mat-error>
+
+                        </mat-form-field>
+                    </p>
+
+                    <hr style="border-color: #bbb;margin-top: 0;">
+
+                    <!-- USER PASSWORD -->
+                    <p>
+                        <mat-form-field class="example" appearance="outline">
+                            <mat-label>Şifre</mat-label>
+                            <mat-icon matPrefix class="form-ico">lock</mat-icon>
+                            <input formControlName="password" matInput type="password" placeholder="" value="" name="userPassword">
+
+                            <!-- MAT_ERROR -->
+                            <mat-hint *ngIf="!formLogin.controls['password'].value">
+                                <span>
+                                    <strong class="mr-1" style="color:red;font-size: 15px;">*</strong>
+                                    Kullanıcı şifrenizi giriniz
+                                </span>
+                            </mat-hint>
+                            <mat-error *ngIf="formLogin.controls['password'].invalid">
+                                Kullanıcı şifresi Boş geçilemez!
+                            </mat-error>
+
+                        </mat-form-field>
+                    </p>
+
+                    <hr style="border-color: #bbb;margin-top: 0;">
+
+                    <!-- BUTTON -->
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="submit" mat-raised-button class="btn login-btn" [disabled]="formLogin.invalid">
+                                GİRİŞ YAP
+                                <mat-icon class="sign-ico">logout</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </mat-card>
+    </fieldset>
+</form>

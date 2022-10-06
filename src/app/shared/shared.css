@@ -1,0 +1,303 @@
+::ng-deep mat-form-field {
+    font-size: 13.5px !important;
+  }
+  
+  ::ng-deep .mat-form-field-wrapper {
+    padding-bottom: .8em !important;
+  }
+  
+  ::ng-deep .mat-form-field-subscript-wrapper {
+    margin-top: .73em !important;
+  }
+  
+  ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    font-weight: bold !important;
+    color: #000 !important;
+  }
+  
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    background-color: rgba(0, 0, 0, .04);
+  }
+  
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+    /* padding: .5em 0 1em 0; */
+    /* padding: .2em 0 .6em 0; */
+    padding: .2em 0 .6em 0;
+  }
+  
+  ::ng-deep .mat-form-field-infix {
+    border-top-width: .75em !important;
+  }
+  
+  ::ng-deep .mat-form-field-label-wrapper {
+    top: -1.3em !important;
+    /* top: -1em !important; */
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  ::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
+  .mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label {
+    transform: translateY(-1.29375em) scale(0.75) !important;
+    color: #3f51b5 !important;
+  }
+  
+  ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: #3f51b5 !important;
+    /* color: #ffa600 !important; */
+  }
+  
+  ::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+    /* color: #ffa600; */
+    color: #3f51b5;
+  }
+  
+  ::ng-deep .mat-form-field-appearance-outline .mat-select-arrow-wrapper {
+    transform: translateY(0%) !important;
+  }
+  
+  ::ng-deep .mat-datepicker-toggle .mat-icon-button {
+    width: 1.5em !important;
+    height: 1.5em !important;
+    top: 3px !important;
+  }
+  
+  fieldset {
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12) !important;
+    padding: 16px !important;
+    border: 1px solid #036 !important;
+    border-radius: 8px !important;
+  }
+  
+  legend {
+    background-color: rgba(0, 51, 102, 1) !important;
+    color: #fff;
+    border-radius: 4px;
+    width: auto !important;
+    padding: 0 10px !important;
+    font-size: 1.2rem !important;
+  }
+  
+  .mat-button.mat-success,
+  .mat-stroked-button.mat-success {
+    color: #155724;
+  }
+  
+  .mat-button.mat-success:hover,
+  .mat-stroked-button.mat-success:hover {
+    background-color: #f0fff3;
+  }
+  
+  .mat-raised-button.mat-success,
+  .mat-flat-button.mat-success,
+  .mat-fab.mat-success,
+  .mat-mini-fab.mat-success {
+    color: #f0fff3;
+    background-color: #155724;
+  }
+  
+  .mat-icon-button.mat-success {
+    color: #155724;
+  }
+  
+  .mat-btn:enabled,
+  a.mat-btn {
+    min-width: 45px !important;
+    text-decoration: none !important;
+    border-radius: 0 !important;
+    line-height: 30px !important;
+    padding: 0 10px !important;
+    transition: 150ms ease-in-out;
+  }
+  
+  .mt-add-btn:enabled,
+  a.mt-add-btn {
+    color: #fff !important;
+    background-color: rgba(21, 87, 36, .75) !important;
+  }
+  
+  .mt-add-btn:enabled:hover,
+  a.mt-add-btn:hover {
+    background-color: rgba(21, 87, 36, 1) !important;
+  }
+  
+  .mt-update-btn {
+    color: #000 !important;
+    background-color: rgba(255, 165, 0, .4) !important;
+  }
+  
+  .mt-update-btn:enabled:hover {
+    background-color: rgba(255, 165, 0, .6) !important;
+  }
+  
+  .mt-primary-btn:enabled,
+  a.mt-primary-btn {
+    color: #fff !important;
+    background-color: rgba(0, 51, 102, .75) !important;
+  }
+  
+  .mt-primary-btn:enabled:hover,
+  a.mt-primary-btn:hover {
+    background-color: rgba(0, 51, 102, 1) !important;
+  }
+  
+  .mt-delete-btn:enabled,
+  a.mt-delete-btn {
+    color: #fff !important;
+    background-color: rgba(238, 48, 34, .8);
+  }
+  
+  .mt-delete-btn:enabled:hover,
+  a.mt-delete-btn:hover {
+    background-color: rgba(238, 48, 34, 1);
+  }
+  
+  .mt-close-btn:enabled {
+    border-radius: 0 !important;
+    background-color: rgba(0, 0, 0, .1);
+  }
+  
+  .mt-close-btn:enabled:hover {
+    background-color: rgba(0, 0, 0, .2);
+  }
+  
+  .table .thead-dark th {
+    background-color: #3f51b5 !important;
+    font-weight: 500 !important;
+  }
+  
+  :host>>>.p-inputtext {
+    padding: 0.4em 0.75rem !important;
+    background: rgba(0, 0, 0, .04) !important;
+  }
+  
+  :host>>>.p-dropdown {
+    background: rgba(0, 0, 0, .04) !important;
+  }
+  
+  :host>>>.p-dropdown>.p-inputtext {
+    background: transparent !important;
+  }
+  
+  :host>>>.p-input-icon-left>.p-inputtext {
+    padding-left: 2.5rem !important;
+  }
+  
+  :host>>>.p-input-icon-left>i,
+  .p-input-icon-right>i {
+    top: 40% !important;
+  }
+  
+  :host>>>.p-paginator .p-dropdown .p-dropdown-label {
+    margin-top: 5px !important;
+  }
+  
+  :host>>>.p-datatable .p-datatable-thead>tr:first-child>th {
+    color: #fff !important;
+    background: rgba(11, 83, 148, 1) !important;
+  }
+  
+  :host>>>.p-datatable .p-datatable-thead>tr:nth-child(2)>th {
+    padding: .15rem .75rem !important;
+  }
+  
+  :host>>>.p-datatable .p-datatable-thead>tr:first-child>th>small {
+    font-weight: 600 !important;
+  }
+  
+  :host>>>.p-datatable .p-sortable-column .p-sortable-column-icon {
+    color: #fff !important;
+  }
+  
+  :host>>>.p-datatable .p-sortable-column:not(.p-highlight):hover .p-sortable-column-icon {
+    color: #fff !important;
+  }
+  
+  :host>>>.p-column-filter-menu-button {
+    color: #aaa !important;
+  }
+  
+  :host>>>.p-column-filter-menu-button.p-column-filter-menu-button-active,
+  .p-column-filter-menu-button.p-column-filter-menu-button-active:hover {
+    /* background: rgba(63, 81, 181, 0.12); */
+    color: #fff !important;
+  }
+  
+  :host>>>.p-datatable .p-datatable-thead>tr>th {
+    padding: 0.25rem !important;
+  }
+  
+  :host>>>.p-datatable .p-datatable-tbody>tr>td {
+    padding: 0.25rem !important;
+    font-size: 80% !important;
+  }
+  
+  ::ng-deep .p-inputtext {
+    padding: 0.25rem !important;
+  }
+  
+  ::ng-deep .p-multiselect .p-multiselect-label {
+    padding: 0.25rem !important;
+  }
+  
+  ::ng-deep .p-button {
+    padding: 5px 10px !important;
+    font-size: 1rem !important;
+  }
+  
+  ::ng-deep .p-column-filter-overlay {
+    min-width: 16.5rem !important;
+  }
+  
+  .w-50 {
+    width: 50% !important;
+  }
+  
+  .w-10 {
+    width: 10% !important;
+  }
+  
+  
+  .w-15 {
+    width: 15% !important;
+  }
+  
+  
+  .ball-scale-multiple {
+    position: relative;
+  }
+  
+  :host>>> .ball-scale-multiple div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    opacity: 0;
+    animation: ball-scale-multiple 1s linear infinite;
+  }
+  
+  .ball-scale-multiple div:nth-child(2) {
+    animation-delay: .2s;
+  }
+  
+  .ball-scale-multiple div:nth-child(3) {
+    animation-delay: .4s;
+  }
+  
+  @keyframes ball-scale-multiple {
+    0% {
+      -webkit-transform: scale(0);
+      opacity: 0;
+    }
+  
+    5% {
+      opacity: 1;
+    }
+  
+    100% {
+      -webkit-transform: scale(1);
+      opacity: 0;
+    }
+  }
